@@ -1,15 +1,11 @@
 package POs;// PageObjects/OwnerInformationPage.java
-import org.openqa.selenium.*;
-import org.openqa.selenium.support.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
 // page_url = http://localhost:8080/owners/find
 public class OwnerInformationPageObject extends BasePagePO{
-
-    @FindBy(xpath = "/html/body/div/div/table[1]/tbody/tr[3]/td")
-    public WebElement ownerCityName;
-
-    @FindBy(xpath = "//*[text() = 'the first visit']")
-    public WebElement tfFirstVisit;
 
     public OwnerInformationPageObject(WebDriver driver) {
         super(driver);
@@ -27,7 +23,16 @@ public class OwnerInformationPageObject extends BasePagePO{
     public void goToNewVisitPage() {
         click(By.linkText("Add Visit"));
     }
-    public String getOwnerCity() {
-        return ownerCityName.getText();
+    public String getOwnerCity(String ownerCityName) {
+
+        WebElement ownerCityElement = driver.findElement(By.xpath("//*[text() = '" + ownerCityName + "']"));
+
+        return ownerCityElement.getText();
     }
+
+    public String getOwnerName(String ownerFullName) {
+        WebElement ownerNameElement = driver.findElement(By.xpath("//*[contains(text(), '" + ownerFullName + "')]"));
+        return ownerNameElement.getText();
+    }
+
 }
