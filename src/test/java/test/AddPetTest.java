@@ -48,7 +48,7 @@ public class AddPetTest {
         findOwnersPage.searchForAllOwners();
         findOwnersPage.clickOnOwner("Franklin");
         ownerInfoPage.goToAddNewPet();
-        addPetPage.providePetData("Leo", "1999-05-30", "bird");
+        addPetPage.providePetData("Leo", "05301999", "bird");
         addPetPage.clickAddPetButton();
         assertTrue( addPetPage.isErrorDisplayed("is already in use"), ANSI_BLUE + "Error message is not correct" + ANSI_RESET);
     }
