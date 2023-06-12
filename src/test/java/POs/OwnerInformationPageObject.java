@@ -20,6 +20,10 @@ public class OwnerInformationPageObject extends BasePagePO{
         click(By.linkText("Add New Pet"));
     }
 
+    public void goToEditPetPage() {
+        click(By.linkText("Edit Pet"));
+    }
+
     public void goToNewVisitPage() {
         click(By.linkText("Add Visit"));
     }
