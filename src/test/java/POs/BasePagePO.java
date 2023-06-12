@@ -60,7 +60,6 @@ public class BasePagePO {
 
         for (String text : elementTexts) {
             if (text.contains(errorMessage)) {
-                System.out.println(ANSI_BLUE + "Error message: " + text + ANSI_RESET);
                 return true;
             }
         }
