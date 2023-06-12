@@ -36,7 +36,7 @@ public class FindOwnersPageObject extends BasePagePO {
     }
 
     public void clickOnOwner(String nameLink) {
-        click(By.linkText(nameLink));
+        click(By.partialLinkText(nameLink));
         
     }
 }
