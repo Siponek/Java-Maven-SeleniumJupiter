@@ -16,7 +16,7 @@ public class OwnerInformationPageObject extends BasePagePO{
         click(By.linkText("Edit Owner"));
     }
 
-    public void goToNewPetPage() {
+    public void goToAddNewPet() {
         click(By.linkText("Add New Pet"));
     }
 
@@ -34,5 +34,14 @@ public class OwnerInformationPageObject extends BasePagePO{
         WebElement ownerNameElement = driver.findElement(By.xpath("//*[contains(text(), '" + ownerFullName + "')]"));
         return ownerNameElement.getText();
     }
+    public String getOwnerAddress(String ownerAddress) {
+        WebElement ownerAddressElement = driver.findElement(By.xpath("//*[text() = '" + ownerAddress + "']"));
+        return ownerAddressElement.getText();
+    }
+    public boolean isPetDetailsPresent(String petDetail) {
+        WebElement petDetailElement = driver.findElement(By.xpath("//*[contains(text(), '" + petDetail + "')]"));
+        return petDetailElement.isDisplayed();
+    }
+
 
 }
